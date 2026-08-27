@@ -26,7 +26,7 @@ export default function UnlockedCard({ onContinue}) {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={onContinue}
-            className="relativee z-10 w-full sm:w-auto px-8 py-3.5 bg-gradient-to-br from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold rounded-2xl shadow-lg shadow-pink-500/20 transition-all flex items-center justify-center gap-2 mx-auto cursor-pointer"
+            className="relative z-10 w-full sm:w-auto px-8 py-3.5 bg-gradient-to-br from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold rounded-2xl shadow-lg shadow-pink-500/20 transition-all flex items-center justify-center gap-2 mx-auto cursor-pointer"
             >
                 <span>Lanjut</span>
                 <ArrowRight size={20} className="w-4 h-4" />

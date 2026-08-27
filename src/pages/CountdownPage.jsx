@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, ArrowRight } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import SnowEffect from '../components/SnowEffect';
 import { ucapanData } from '../data/ucapanData';
 import UnlockedCard from '../components/UnlockedCard';
 import TimeUnit from '../components/TimeUnit';
+import { useTransition } from '../context/TransitionContext';
 
 export default function CountdownPage() {
-  const navigate = useNavigate();
+  const { transitionTo } = useTransition();
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: 0, hours: 0, minutes: 0, seconds: 0,
   });
   const [isTimeUp, setIsTimeUp] = useState(false);
 
@@ -43,19 +40,18 @@ export default function CountdownPage() {
     return () => clearInterval(timer);
   }, []);
 
+  const handleContinue = () => {
+    transitionTo('/unlock');
+  };
+
   return (
     <main className="h-screen bg-rose-50 text-slate-100 flex flex-col p-4 sm:p-6 relative overflow-hidden selection:bg-pink-500 selection:text-white">
-      
-        <SnowEffect />
+      <SnowEffect />
 
-      {/* Background Decorative Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-
-
       <div className="flex-1 flex flex-col items-center justify-center z-10">
-        {/* Header Section */}
         <header className="text-center">
           <motion.h1
             initial={{ opacity: 0, y: -10 }}
@@ -70,7 +66,6 @@ export default function CountdownPage() {
           </motion.h1>
         </header>
 
-        {/* Countdown Section */}
         <section aria-label="Countdown Timer" className="w-full max-w-2xl">
           <AnimatePresence mode="wait">
             {!isTimeUp ? (
@@ -88,20 +83,19 @@ export default function CountdownPage() {
                 <TimeUnit value={timeLeft.seconds} label="Detik" />
               </motion.div>
             ) : (
-              <UnlockedCard onContinue={() => navigate('/unlock')} />
+              <UnlockedCard onContinue={handleContinue} />
             )}
           </AnimatePresence>
         </section>
       </div>
 
-      {/* Footer */}
       <footer className="pb-6 text-center z-10 space-y-2">
         <p className="text-xs text-slate-500">
           Dibuat dengan penuh rasa hangat untuk {ucapanData.nama}
         </p>
         {!isTimeUp && import.meta.env.DEV && (
           <button
-            onClick={() => navigate('/unlock')}
+            onClick={handleContinue}
             className="text-[11px] text-slate-600 hover:text-slate-400 transition-colors underline flex items-center gap-1 mx-auto cursor-pointer"
           >
             <Lock className="w-3 h-3" />

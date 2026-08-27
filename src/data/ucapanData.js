@@ -1,7 +1,7 @@
 export const ucapanData = {
     nama: "Silfa Dewi Aryanti",
     // TARGET DATE DENGAN FORMAT YYYY/MM/DDTH/MM/SS
-    targetDate: "2026-08-26T12:27:00",
+    targetDate: "2027-08-26T12:27:00",
     pin: "080808",
   umur: 22,
   pesan: "Selamat ulang tahun! Semoga di usia baru ini makin sukses, sehat selalu, dan semua impianmu tercapai. Tetap jadi pribadi yang ceria dan menginspirasi!",
