@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lock, Unlock, Delete, ArrowLeft, ShieldAlert } from 'lucide-react';
 import { ucapanData } from '../data/ucapanData';
+import { useTransition } from '../context/TransitionContext'
 
 export default function PasswordPage() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
+  const { transitionTo } = useTransition();
   const [pinInput, setPinInput] = useState('');
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -33,7 +35,7 @@ export default function PasswordPage() {
     if (input === ucapanData.pin) {
       setIsSuccess(true);
       setTimeout(() => {
-        navigate('/wish');
+        transitionTo('/wish');
       }, 1000);
     } else {
       setIsError(true);
@@ -148,7 +150,7 @@ export default function PasswordPage() {
           <button
             onClick={handleDelete}
             disabled={isSuccess || pinInput.length === 0}
-            className="w-14 h-14 sm:w-14 sm:h-14 rounded-xl bg-white/40 border border-white/60 text-slate-500 hover:text-slate-800 hover:bg-white/60 active:scale-95 transition-all flex items-center justify-center mx-auto cursor-pointer disabled:opacity-30"
+            className="w-14 h-14 sm:w-14 sm:h-14 rounded-xl bg-white/40 border border-white/60 text-slate-800 font-semibold text-lg sm:text-lg hover:bg-white/60 active:scale-95 transition-all flex items-center justify-center mx-auto cursor"
             aria-label="Hapus satu angka"
           >
             <Delete className="w-5 h-5 sm:w-5 sm:h-5" />

@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 const FLOWERS = ["🌸", "💮", "🌺"];
 
 export default function SnowEffect({ count = 15, color = "#f472b6" }) {
+  
   const particles = useMemo(() => {
     return Array.from({ length: count }).map((_, i) => ({
       id: i,
