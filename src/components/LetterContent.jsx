@@ -35,7 +35,7 @@ export default function LetterContent({ title, body, footer, onContinue }) {
       {/* Backdrop: blur + SnowEffect */}
       <div className="absolute inset-0 bg-rose-50 overflow-hidden">
         <div className="absolute inset-0 blur-sm scale-110">
-          <SnowEffect count={30} opacityRange={[0.6, 0.9]} />
+          <SnowEffect />
         </div>
       </div>
 
@@ -44,7 +44,7 @@ export default function LetterContent({ title, body, footer, onContinue }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 2.1, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-md sm:max-w-xl lg:max-w-3xl my-auto"
         >
           <div
