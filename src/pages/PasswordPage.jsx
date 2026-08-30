@@ -58,9 +58,6 @@ export default function PasswordPage() {
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <span className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
-          Step 2 of 4
-        </span>
       </header>
 
       <section className="relative w-full max-w-sm z-10 space-y-5 sm:space-y-6 text-center bg-white/20 border border-white/40 backdrop-blur-xl rounded-3xl shadow-2xl shadow-pink-500/10 p-5 sm:p-7">
