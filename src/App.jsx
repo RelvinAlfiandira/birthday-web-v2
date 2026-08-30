@@ -23,8 +23,8 @@ export default function App() {
     <BrowserRouter>
       <MusicProvider 
       src={ucapanData.musikUrl}
-      title="Happy Birthday Song"
-      subtitle="Special Wish for You">
+      title="Risk It All"
+      subtitle="Bruno Mars">
         <TransitionProvider>
           <Routes>
             <Route path="/" element={<CountdownPage />} />

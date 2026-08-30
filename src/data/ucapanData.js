@@ -26,5 +26,5 @@ export const ucapanData = {
 
     surat,
     foto,
-    musikUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    musikUrl: "/music/Bruno_Mars-Risk_It_All.mp3",
 };
