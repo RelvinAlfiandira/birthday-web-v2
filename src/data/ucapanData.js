@@ -1,6 +1,6 @@
 // data target ucapan
 const nama = "Silfa Dewi Aryanti";
-const umur = 22;
+const umur = 21;
 
 // konten surat ucapan
 const surat = {
@@ -21,7 +21,7 @@ export const ucapanData = {
     nama,
     umur,
     // TARGET DATE DENGAN FORMAT YYYY/MM/DDTH/MM/SS
-    targetDate: "2027-08-26T12:27:00",
+    targetDate: "2026-01-08T12:27:00",
     pin: "080808",
 
     surat,
